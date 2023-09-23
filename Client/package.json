@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.16",
+    "embla-carousel": "^8.0.0-rc12",
+    "embla-carousel-autoplay": "^8.0.0-rc14",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.2",
     "next": "13.5.2",
