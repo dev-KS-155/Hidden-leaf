@@ -4,15 +4,20 @@ import SocialIcons from "@/componets/footer/SocialIcons";
 import { Icons } from '@/componets/footer/Menus';
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white justify-center align-middle">
+    <footer className="bg-gray-900 text-white flex flex-col">
       <ItemsContainer />
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
-      text-center pt-2 text-gray-400 text-sm pb-8"
-      >
-        <span>© 2020 Appy. All rights reserved.</span>
-        <span>Terms · Privacy Policy</span>
-        <SocialIcons/>
+      <hr className=" m-5"/>
+      <div className="flex flex-col items-center gap-y-5 p-4" >
+        <div className=" flex flex-row gap-x-2 items-center">
+          <span className="font-bold inline">Let's get social</span>
+          <div>
+         <SocialIcons/>
+          </div>
+        </div>
+        <div>
+        <span>© 2020 Appy. All rights reserved. Terms · Privacy Policy</span>
+        </div>
+        {/* <span>Terms · Privacy Policy</span> */}
       </div>
     </footer>
   );
