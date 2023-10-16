@@ -15,7 +15,7 @@ const ItemsContainer = () => {
             />
             <label
               htmlFor="message"
-              className="block mb-2 text-sm font-medium text-gray-800 dark:text-white "
+              className="block mb-2 text-sm font-medium "
             >
                Your Suggestion
             </label>
