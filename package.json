@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-dom": "^18.2.0",
+    "swiper": "^10.3.1"
+  }
+}
