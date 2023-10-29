@@ -1,10 +1,11 @@
 import Footer from '@/componets/footer/Footer'
+import Review from '@/componets/review/Review'
 import Image from 'next/image'
 
 export default function Home() {
   return (
     <>
-      <h1 className='bg-white text-center text-blue-500'>Testing</h1>
+      <Review/>
       <Footer/>
     </>
   )
