@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar/Navbar'
 import Credentials from "@/components/Credentials/Credentials";
 import AboutUs from "@/components/AboutUs/AboutUs"
 import UserProfile from '@/components/UserProfile/UserProfile';
+import UserDetails from '@/components/UserDetails/UserDetails';
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
       {/* < HomeImage /> */}
       {/* < AboutUs /> */}
       {/* < Credentials /> */}
-      < UserProfile />
-
+      {/* < UserProfile /> */}
+      < UserDetails />
     </>
   )
 }
