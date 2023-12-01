@@ -39,5 +39,4 @@ const ItemsContainer = () => {
     </div>
   );
 };
-
 export default ItemsContainer;
