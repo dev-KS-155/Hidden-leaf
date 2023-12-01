@@ -4,6 +4,7 @@ import Credentials from "@/components/Credentials/Credentials";
 import AboutUs from "@/components/AboutUs/AboutUs"
 import UserProfile from '@/components/UserProfile/UserProfile';
 import UserDetails from '@/components/UserDetails/UserDetails';
+import Seats from '@/components/Seats/Seats';
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       {/* < AboutUs /> */}
       {/* < Credentials /> */}
       {/* < UserProfile /> */}
-      < UserDetails />
+      {/* < UserDetails /> */}
+      < Seats />
     </>
   )
 }

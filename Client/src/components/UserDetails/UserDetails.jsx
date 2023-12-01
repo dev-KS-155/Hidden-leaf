@@ -1,145 +1,192 @@
-import React from "react";
-import Image from "next/image";
+"use client";
+
+import React, { useEffect } from "react";
 import UserProfile from "../UserProfile/UserProfile";
+import "./UserDetails.css";
+
 const UserDetails = () => {
+  useEffect(() => {
+    const downloadButton = document.querySelector(`.download-button`);
+    const downloadIcon = document.querySelector(`.download-icon`);
+    const downloadLoader = document.querySelector(`.download-loader`);
+    const downloadCheckMark = document.querySelector(`.check-svg`);
+    const downloadText = document.querySelector(`.button-copy`);
+
+    const handleButtonClick = () => {
+      downloadIcon.classList.add(`hidden`);
+      downloadLoader.classList.remove(`hidden`);
+      downloadText.innerHTML = "SAVING";
+    };
+
+    const handleAnimationEnd = () => {
+      downloadLoader.classList.add(`hidden`);
+      downloadCheckMark.classList.remove(`hidden`);
+      downloadText.innerHTML = "SAVED";
+    };
+
+    downloadButton.addEventListener("click", handleButtonClick, { once: true });
+    downloadLoader.addEventListener("animationend", handleAnimationEnd);
+
+    return () => {
+      downloadButton.removeEventListener("click", handleButtonClick);
+      downloadLoader.removeEventListener("animationend", handleAnimationEnd);
+    };
+  }, []);
   return (
-    <>
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-slate-200 via-slate-300 to-slate-700">
       <UserProfile />
-      <div
-        className="flex justify-center h-screen bg-opacity-70 bg-blur-sm backdrop-blur-sm "
-        style={{
-          backgroundImage: "url('/images/BackGroundImg.jpg')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="flex items-center p-8 bg-cyan-900 bg-opacity-20 backdrop-blur-md rounded-lg h-4/5 mt-32 ml-80 shadow-2xl shadow-cyan-500/25">
-          <div className="px-20">
-            <Image
-              src="/images/UserDetails.png"
-              alt="Profile Image"
-              width={250}
-              height={50}
-            />
-          </div>
-          <form className="w-full max-w-xl mr-20">
-            <div className="grid gap-6 mb-6 md:grid-cols-2">
-              <div>
+      <div className="mt-5 md:mt-0 md:col-span-2 max-w-3xl w-full ml-40">
+        <form className="bg-opacity-90 backdrop-blur-md overflow-hidden sm:rounded-md bg-transparent p-8 ">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Basic Details</h2>
+            <div className="grid grid-cols-6 gap-6">
+              <div className="col-span-6 sm:col-span-3">
                 <label
-                  htmlFor="first_name"
-                  className="block mb-2 text-sm font-medium text-gray-900"
+                  htmlFor="name"
+                  className="block text-md font-semibold text-gray-700"
                 >
-                  First name
+                  Name
                 </label>
                 <input
-                  type="text"
-                  id="first_name"
-                  className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                  placeholder="John"
-                  value="Kimi no Namai wa"
-                  required
-                  readOnly
+                  id="name"
+                  className="mt-1 block w-full py-2 px-3 border-b-2 border-black bg-transparent shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition-transform transform duration-300 hover:scale-110 text-xl"
+                  value="kimi no nama ?"
+                  disabled
                 />
               </div>
-              <div>
+              <div className="col-span-6 sm:col-span-3">
                 <label
-                  htmlFor="last_name"
-                  className="block mb-2 text-sm font-medium text-gray-900 "
+                  htmlFor="email"
+                  className="block text-md font-semibold text-gray-700"
                 >
-                  Last name
+                  Email
                 </label>
-                <input
-                  type="text"
-                  id="last_name"
-                  className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                  placeholder="Doe"
-                  required
-                  readOnly
-                />
+                <div className="flex items-center">
+                  <input
+                    id="email"
+                    className="mt-1 block w-full py-2 px-3 border-b-2 border-black bg-transparent shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  transition-transform transform duration-300 hover:scale-105 text-xl"
+                  />
+                  <button className="bg-indigo-500 text-white px-4 py-2 rounded-md ml-4 hover:bg-indigo-600 focus:outline-none focus:ring focus:border-indigo-700 transition-all duration-300">
+                    Verify
+                  </button>
+                </div>
               </div>
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block mb-2 text-sm font-medium text-gray-900 "
-                >
-                  IRCTC Id
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                  placeholder="Flowbite"
-                  required
-                  readOnly
-                />
-              </div>
-              <div>
+              <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="phone"
-                  className="block mb-2 text-sm font-medium text-gray-900 "
+                  className="block text-md font-semibold text-gray-700"
                 >
-                  Phone number
+                  Phone Number
+                </label>
+                <div className="flex items-center">
+                  <input
+                    id="email"
+                    className="mt-1 block w-full py-2 px-3 border-b-2 border-black bg-transparent shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform transform duration-300 hover:scale-105"
+                  />
+                  <button className="bg-indigo-500 text-white px-4 py-2 rounded-md ml-4 hover:bg-indigo-600 focus:outline-none focus:ring focus:border-indigo-700 transition-all duration-300">
+                    Verify
+                  </button>
+                </div>
+              </div>
+              <div className="col-span-6">
+                <label
+                  htmlFor="irctc_id"
+                  className="block text-md font-semibold text-gray-700"
+                >
+                  IRCTC ID
                 </label>
                 <input
-                  type="tel"
-                  id="phone"
-                  className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                  placeholder=""
-                  pattern="[0-9]{10}}"
-                  value="+91-"
-                  required
+                  id="irctc_id"
+                  className="mt-1 block w-full py-2 px-3 border-b-2 border-black bg-transparent shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="block mb-2 text-sm font-medium text-gray-900 "
-              >
-                Email address
-              </label>
-              <input
-                type="email"
-                id="email"
-                className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                placeholder=""
-                required
-              />
+          </div>
+
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Credentials</h2>
+            <div className="grid grid-cols-6 gap-6">
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="new_password"
+                  className="block text-md font-semibold text-gray-700"
+                >
+                  New Password
+                </label>
+                <input
+                  id="new_password"
+                  type="password"
+                  className="mt-1 block w-full py-2 px-3 border border-black bg-transparent rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="confirm_password"
+                  className="block text-md font-semibold text-gray-700"
+                >
+                  Confirm Password
+                </label>
+                <input
+                  id="confirm_password"
+                  type="password"
+                  className="mt-1 block w-full py-2 px-3 border border-black bg-transparent rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform transform duration-300 hover:scale-105"
+                />
+              </div>
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="password"
-                className="block mb-2 text-sm font-medium text-gray-900 "
-              >
-                New Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                placeholder="Enter New password"
-                required
-              />
+          </div>
+
+          <button className="download-button transform active:scale-95 hover:scale-[110%] text-black px-16 py-6 rounded-lg font-bold tracking-widest ml-96 transition-all duration-300">
+            <div className="flex justify-center items-center relative">
+              <div className="svg-container text-black">
+                <svg
+                  className="download-icon text-black"
+                  width={18}
+                  height={22}
+                  viewBox="0 0 18 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="download-arrow"
+                    d="M13 9L9 13M9 13L5 9M9 13V1"
+                    stroke="#F2F2F2"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M1 17V18C1 18.7956 1.31607 19.5587 1.87868 20.1213C2.44129 20.6839 3.20435 21 4 21H14C14.7956 21 15.5587 20.6839 16.1213 20.1213C16.6839 19.5587 17 18.7956 17 18V17"
+                    stroke="#F2F2F2"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <div className="download-loader text-black hidden" />
+                <svg
+                  className="check-svg hidden"
+                  width={20}
+                  height={20}
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM15.1071 7.9071C15.4976 7.51658 15.4976 6.88341 15.1071 6.49289C14.7165 6.10237 14.0834 6.10237 13.6929 6.49289L8.68568 11.5001L7.10707 9.92146C6.71655 9.53094 6.08338 9.53094 5.69286 9.92146C5.30233 10.312 5.30233 10.9452 5.69286 11.3357L7.97857 13.6214C8.3691 14.0119 9.00226 14.0119 9.39279 13.6214L15.1071 7.9071Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div className="button-copy pl-2 leading-none uppercase">
+                SAVE
+              </div>
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="confirm_password"
-                className="block mb-2 text-sm font-medium text-gray-900 "
-              >
-                Confirm password
-              </label>
-              <input
-                type="password"
-                id="confirm_password"
-                className=" border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                placeholder="Confirm New Password "
-                required
-              />
-            </div>
-          </form>
-        </div>
+          </button>
+        </form>
       </div>
-    </>
+    </div>
   );
 };
 
