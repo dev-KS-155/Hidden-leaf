@@ -62,5 +62,4 @@ const SocialIcons = () => {
     </div>
   );
 };
-
 export default SocialIcons;

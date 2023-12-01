@@ -1,0 +1,30 @@
+.card-container {
+    display: flex;
+  }
+  .slick-arrow {
+    font-size: 24px;
+    line-height: 1;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+  }
+  .slick-prev {
+    left: 10px;
+  }
+  
+  .slick-next {
+    right: 6px;
+  }
+  .slick-prev.slick-disabled,
+.slick-next.slick-disabled {
+  color: #999; 
+  cursor: not-allowed;
+}
+.slick-prev:before,
+.slick-next:before
+{
+  color: blue;
+}
