@@ -1,4 +1,6 @@
 import React from "react";
+import { useRouter } from "next/navigation";
+
 
 const menuItems = [
   {
@@ -86,6 +88,11 @@ const menuItems = [
 ];
 
 const UserProfile = () => {
+  const router = useRouter();
+
+  const Login = () => {
+    router.push("/Login");
+  };
   return (
     <>
       <aside
@@ -97,7 +104,10 @@ const UserProfile = () => {
           <ul className="space-y-12 font-medium my-40 text-2xl px-12">
             {menuItems.map((menuItem) => (
               <li key={menuItem.id}>
-                <button className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white group text-2xl font-extrabold transform transition-transform hover:scale-105 hover:shadow-2xl w-full hover:shadow-black">
+                <button
+                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white group text-2xl font-extrabold transform transition-transform hover:scale-105 hover:shadow-2xl w-full hover:shadow-black"
+                  onClick={Login}
+                >
                   {menuItem.icon}
                   <span className="ml-3">{menuItem.label}</span>
                 </button>

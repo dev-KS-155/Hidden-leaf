@@ -25,6 +25,11 @@ export default function Navbar() {
     router.push("/Login");
   };
 
+  const Homepage = () => {
+    router.push("/train")
+
+  }
+
   const Profile = () => {
     router.push("/UserPage");
   };
@@ -57,7 +62,7 @@ export default function Navbar() {
                     />
                   </div>
                   <div className="hidden sm:ml-6 sm:block">
-                    <div className="flex space-x-4">
+                    <div className="flex space-x-4" onClick={Homepage}>
                       {navigation.map((item) => (
                         <a
                           key={item.name}
