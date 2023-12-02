@@ -5,6 +5,7 @@ import UserProfile from "../UserProfile/UserProfile";
 import "./UserDetails.css";
 
 const UserDetails = () => {
+
   useEffect(() => {
     const downloadButton = document.querySelector(`.download-button`);
     const downloadIcon = document.querySelector(`.download-icon`);
@@ -50,7 +51,7 @@ const UserDetails = () => {
                 <input
                   id="name"
                   className="mt-1 block w-full py-2 px-3 border-b-2 border-black bg-transparent shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition-transform transform duration-300 hover:scale-110 text-xl"
-                  value="kimi no nama ?"
+                  value="Uzumaki Naruto"
                   disabled
                 />
               </div>
@@ -64,6 +65,8 @@ const UserDetails = () => {
                 <div className="flex items-center">
                   <input
                     id="email"
+                    value="Konoha@flame.com"
+                    disabled
                     className="mt-1 block w-full py-2 px-3 border-b-2 border-black bg-transparent shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500  transition-transform transform duration-300 hover:scale-105 text-xl"
                   />
                   <button className="bg-indigo-500 text-white px-4 py-2 rounded-md ml-4 hover:bg-indigo-600 focus:outline-none focus:ring focus:border-indigo-700 transition-all duration-300">
@@ -81,6 +84,7 @@ const UserDetails = () => {
                 <div className="flex items-center">
                   <input
                     id="email"
+                    placeholder="8925627113"
                     className="mt-1 block w-full py-2 px-3 border-b-2 border-black bg-transparent shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform transform duration-300 hover:scale-105"
                   />
                   <button className="bg-indigo-500 text-white px-4 py-2 rounded-md ml-4 hover:bg-indigo-600 focus:outline-none focus:ring focus:border-indigo-700 transition-all duration-300">
@@ -90,13 +94,14 @@ const UserDetails = () => {
               </div>
               <div className="col-span-6">
                 <label
-                  htmlFor="irctc_id"
+                  htmlFor="phone"
                   className="block text-md font-semibold text-gray-700"
                 >
                   IRCTC ID
                 </label>
                 <input
-                  id="irctc_id"
+                  id="phone"
+                  placeholder="1w33E"
                   className="mt-1 block w-full py-2 px-3 border-b-2 border-black bg-transparent shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-transform transform duration-300 hover:scale-105"
                 />
               </div>
