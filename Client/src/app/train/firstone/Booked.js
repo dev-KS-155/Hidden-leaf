@@ -6,8 +6,13 @@ import {TrainSearch} from "@/app/train/firstone/TrainSearch()";
 import React, { useState } from "react";
 import "react-calendar/dist/Calendar.css";
 import Link from 'next/link';
+// import Router, { useRouter } from "next/router";
 
-export default function Booked() {
+export default function Booked({path}) {
+  // const route = useRouter();
+  // const ticket = () => {
+  //   route.push("/TrainList")
+  // }
   const [kartik,setkartik]=useState('');
   const[krishna,setkrishna]=useState('');
   const [date, setDate] = useState(new Date());
@@ -45,8 +50,8 @@ export default function Booked() {
 
                    {/* for serach  */}
 
-      <button className=" bg-blue-500 hover:bg-blue-600 rounded-3xl sm:w-[12rem] w-fit p-3 text-xl duration-300 font-bold border-2 border-slate-400"  onClick={()=>{}} >
-      <Link href="/TrainList">
+      <button className=" bg-blue-500 hover:bg-blue-600 rounded-3xl sm:w-[12rem] w-fit p-3 text-xl duration-300 font-bold border-2 border-slate-400"   >
+      <Link href={path}>
       Search
 </Link>
         </button>

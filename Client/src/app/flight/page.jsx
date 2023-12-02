@@ -1,10 +1,10 @@
 import React from 'react'
-import Train from './Train'
+import Flight from '@/app/flight/Flight'
 
 export default function page() {
   return (
     <div>
-      <Train/>
+    <Flight/>
     </div>
   )
 }
