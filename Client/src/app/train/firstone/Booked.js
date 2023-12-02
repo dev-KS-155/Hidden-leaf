@@ -36,6 +36,7 @@ export default function Booked({path}) {
               className="-mr-1 h-5 w-5 text-gray-500 ml-2"
               aria-hidden="true"
             />
+            {/*  */}
           </div>
           <BookDate
             date={date} 
