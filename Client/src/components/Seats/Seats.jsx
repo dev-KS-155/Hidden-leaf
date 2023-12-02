@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import JsBarcode from 'jsbarcode';
+import JsBarcode from "jsbarcode";
 
 const seatData = [
   { id: "Seat--1A", label: "1A", price: "6,500/-", details: "Free Meal" },
@@ -206,7 +206,7 @@ function Seats() {
             >
               Phone Number
             </label>
-          
+
             <input
               type="tel"
               id="phoneNumber"
@@ -216,23 +216,6 @@ function Seats() {
               className="w-3/5 p-2 border rounded-md bg-gray-100 text-gray-800 "
               required
             />
-            
-              {/* <input
-              type="tel"
-              
-              name="phoneNumber"
-              value={bookingDetails.phoneNumber}
-              onChange={handleInputChange}
-              className="w-3/5 p-2 border rounded-md bg-gray-100 text-gray-800 z-30 "
-              
-              disabled
-              required
-
-              translate-x-[2%] translate-y-[75%] -z-30
-
-            /> */}
-
-
           </div>
 
           <div className="mb-4">
