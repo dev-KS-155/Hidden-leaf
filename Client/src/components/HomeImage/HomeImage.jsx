@@ -5,7 +5,7 @@ import Image from "next/image";
 const HomeImage = () => {
   return (
     <>
-      <div className="w-full h-0 pb-[40%] relative mt-10">
+      <div className="w-full h-0 pb-[40%] relative">
         <Image
           src={img}
           alt="IMAGE"
@@ -16,7 +16,7 @@ const HomeImage = () => {
             <div className="">
               <h1>Welcome</h1>
               <h1>To</h1>
-              <h1>Inisdious</h1>
+              <h1>EnduranceExplo</h1>
             </div>
           </div>
         </div>
