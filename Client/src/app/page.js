@@ -8,24 +8,13 @@ import Seats from '@/app/Seats/Seats';
 import Footer from '@/componets/footer/Footer'
 import Image from 'next/image'
 import Review from '@/componets/review/Review'
+import HomePage from '@/components/Homepage/HomePage';
 
 export default function Home() {
   return (
     <>
     <div className="bg-slate-200">
-      {/* <Review/> */}
-      {/* <h1 className='bg-white text-center text-blue-500'>Testing</h1> */}
-      {/* < Navbar /> */}
-      {/* < HomeImage /> */}
-      {/* < AboutUs /> */}
-      {/* < Credentials /> */}
-      {/* < UserProfile /> */}
-
-      {/* < UserDetails /> */}
-      {/* < Seats /> */}
-      {/* < UserDetails /> */}
-      <h1 className='bg-white text-center text-blue-500'>Testing</h1>
-      <Footer/>
+      < HomePage />
       </div>
     </>
     )
