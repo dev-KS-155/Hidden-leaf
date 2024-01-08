@@ -134,7 +134,7 @@ function Seats() {
   };
 
   return (
-    <div className="flex items-center justify-center  min-h-screen bg-gray-400 dark:bg-gray-900">
+    <div className="flex items-center justify-center  min-h-screen bg-gray-400 dark:bg-gray-900 pt-16 pb-16">
       <div className="flex-1 flex items-center justify-center mt-10">
         <div className="bg-gray-200 dark:bg-gray-700 p-12 rounded-md backdrop-blur-md backdrop-filter">
           <ul className="grid grid-cols-5 gap-6 md:grid-cols-2">

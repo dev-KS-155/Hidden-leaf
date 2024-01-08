@@ -5,9 +5,11 @@ import Fuse from 'fuse.js';
 export  const TrainSearch=({men,women}) =>{
 
   const [cities, setCities] = useState([
-   { name: "Lucknow" }, {  name: "Uttarakhand" }, {  name: "Kanpur"}, {  name: "Mumbai" },{  name: "Delhi"},{ name: "Punjab" },{ name: "Adoni"},{  name: "Amaravati"},{  name: "Anantapur"},{name: "Chandragiri"}, {  name: "Chittoor"},{  name: "Dowlaiswaram"},{  name: "Visakhapatnam"},{  name: "Vizianagaram"},{ name: "Yemmiganur" }, {   name: "Vijayawada" }, {   name: "Tirupati" }, {   name: " Alappuzha" }, {   name: "Vatakara"},{  name: " Idukki"},{  name: "Kannur"        },{  name: " Thrissur"},{  name: " Thiruvananthapuram" }, {   name: "Thalassery" }, {   name: "Kottayam" }, {   name: "Agra" }, {   name: "Aligarh"},
-   {   name: "dehradun" }, {   name: "haridwar" }, {   name: "rishikesh"}, {   name: "Jamuu kasmhir" }, {   name: "Chennai" }, {   name: "Merrut"},
+    { name: "LUCKNOW" }, { name: "UTTARAKHAND" }, { name: "KANPUR" }, { name: "MUMBAI" },
+    { name: "DELHI" }, { name: "PUNJAB" }, { name: "ADONI" }, { name: "AMARAVATI" },
+    { name: "ANANTAPUR" }, { name: "CHANDRAGIRI" }, { name: "CHITTOOR" }, { name: "DOWLAISWARAM" },{ name: "VISAKHAPATNAM" }, { name: "VIZIANAGARAM" }, { name: "YEMMIGANUR" }, { name: "VIJAYAWADA" },{ name: "TIRUPATI" }, { name: "ALAPPUZHA" }, { name: "VATAKARA" }, { name: "IDUKKI" },{ name: "KANNUR" }, { name: "THRISSUR" }, { name: "ASSAM" }, { name: "THALASSERY" },{ name: "KOTTAYAM" }, { name: "AGRA" }, { name: "ALIGARH" },{ name: "DEHRADUN" }, { name: "HARIDWAR" }, { name: "RISHIKESH" }, { name: "JAMMUKASHMIR" },{ name: "CHENNAI" }, { name: "MERRUT" },
   ]);
+  
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -66,7 +68,6 @@ export  const TrainSearch=({men,women}) =>{
     setInputValue('');
     // Additional code to close the dropdown if you have one
   };
-
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="w-full sm:w-1/3 relative">
@@ -76,11 +77,12 @@ export  const TrainSearch=({men,women}) =>{
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onClick={handleInputClick}
-          onFocus={handleInputFocus}
+           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           className=" w-full p-2 border-2 border-slate-400 bg-slate-100 hover:border-slate-500 rounded-lg duration-300"
         />
-        {dropdownVisible && searchQuery && isInputFocused && (
+        {dropdownVisible && searchQuery && 
+        (
           <div className="mt-2 p-3 border-2 border-neutral-800 rounded-lg bg-slate-50 absolute w-full">
             {searchResults.length === 0 && noMatches ? (
               <div>No matching cities found.</div>
