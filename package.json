@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@nextui-org/react": "^2.1.13",
-    "react-dom": "^18.2.0",
-    "swiper": "^10.3.1"
-  }
-}

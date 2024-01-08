@@ -11,24 +11,11 @@ import Review from '@/componets/review/Review'
 import HomePage from '@/components/Homepage/HomePage';
 
 export default function Home() {
-  return (
-    <>
-    <div className="bg-slate-200">
-<<<<<<< HEAD
-      {/* <Review/> */}
-      {/* < Navbar /> */}
-      {/* < HomeImage /> */}
-      {/* < AboutUs /> */}
-      {/* < Credentials /> */}
-      {/* < UserProfile /> */}
-      {/* < UserDetails /> */}
-      < HomePage />
-      {/* < Seats /> */}
-      {/* <Footer/> */}
-=======
-      < HomePage />
->>>>>>> manishiiitl1261-manishDev
-      </div>
-    </>
-    )
+      return (
+            <>
+                  <div className="bg-slate-200">
+                        < HomePage />
+                  </div>
+            </>
+      )
 }
